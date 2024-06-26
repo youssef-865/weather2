@@ -11,13 +11,13 @@ search.addEventListener("keyup", function (e) {
   }
 });
 
-async function getWeather(country) {
+async function getWeather(location) {
   try {
     document.getElementById(
       "weatherCards"
     ).innerHTML = `<div class="lds-default d-flex justify-content-center align-items-center m-auto"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
     
-    let response = await fetch(`${BaseApi}?key=${myApi}&q=${country}&days=3`);
+    let response = await fetch(`${BaseApi}?key=${myApi}&q=${location}&days=3`);
     let finalResponse = await response.json();
     console.log(finalResponse);
     displayWeather(finalResponse);
@@ -43,7 +43,7 @@ function displayWeather(data) {
 
     weatherBox += `
       <div class="col-md-4">
-        <div class="bg-black text-white p-3 rounded card-h ">
+        <div class="bg-black text-white p-3 rounded card-h">
           <div class="today forecast">
             <div class="forecast-header d-flex justify-content-between header-class-sunny">
               <div class="day day-class-sunny">${weekday}</div>
@@ -88,10 +88,11 @@ function myCurrentLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let myCurrentPosition = `${latitude},${longitude}`;
-  
+
   console.log(latitude, longitude);
 
   getWeather(myCurrentPosition);
 }
 
 navigator.geolocation.getCurrentPosition(myCurrentLocation);
+
