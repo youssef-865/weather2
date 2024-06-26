@@ -1,5 +1,5 @@
 const myApi = `92bd21f6bd254f54bc6123829241706`;
-const BaseApi = `http://api.weatherapi.com/v1/forecast.json`;
+const BaseApi = `https://api.weatherapi.com/v1/forecast.json`;
 let search = document.getElementById("search");
 
 search.addEventListener("change", function () {
@@ -95,4 +95,3 @@ function myCurrentLocation(position) {
 }
 
 navigator.geolocation.getCurrentPosition(myCurrentLocation);
-
