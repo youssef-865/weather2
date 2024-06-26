@@ -5,7 +5,7 @@ let search = document.getElementById("search");
 search.addEventListener("change", function () {
   getWeather(search.value);
 });
-search.addEventListener("keyup", function () {
+search.addEventListener("keyup", function (e) {
   if (e.key == "Enter") {
     getWeather(search.value);
   }
