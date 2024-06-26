@@ -72,7 +72,6 @@ function displayWeather(data) {
               <div class="d-flex justify-content-between">
                 <span><img src="./images/icon-umberella.png" alt=""> %</span>
                 <span><img src="images/icon-wind.png" alt=""> ${dataArray[i].day.maxwind_kph} km/h</span>
-                <span><img src="images/icon-compass.png" alt=""> ${dataArray[i].day.daily_chance_of_rain}</span>
               </div>
             </div>
           </div>
